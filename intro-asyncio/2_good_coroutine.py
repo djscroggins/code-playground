@@ -13,7 +13,7 @@ async def download_coroutine(session, url):
                     chunk = await response.content.read(1024)
                     if not chunk:
                         break
-                    # This still blocsk, see aiofiles for possible solution
+                    # This still blocks, see aiofiles for possible solution
                     f_handle.write(chunk)
             return await response.release()
 
